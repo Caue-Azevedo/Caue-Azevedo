@@ -1,68 +1,39 @@
 package com.senai.FormaGeometrica;
 
-public class Trapezio {
+public class Trapezio extends FormaGeometrica {
+    private double baseMaior;
+    private double baseMenor;
+    private double altura;
+    private double lado1;
+    private double lado2;
 
-    float baseMaior;
-    float baseMenor;
-    float altura;
-    float perimetro;
-    float area;
-    float lado1;
-    float lado2;
-
-   public void calculoArea() {
-        area = ((baseMaior + baseMenor) * altura) / 2;
-    }
-
-
-    public void calculoPerimetro(float lado1, float lado2, float baseMaior, float baseMenor) {
-        perimetro = baseMaior + baseMenor + lado1 + lado2;
-    }
-
-    public float getArea() {
-        return area;
-    }
-    public float getPerimetro() {
-        return perimetro;
-    }
-
-    public float getBaseMaior() {
-        return baseMaior;
-    }
-
-    public void setBaseMaior(float baseMaior) {
+    public void setBaseMaior(double baseMaior) {
         this.baseMaior = baseMaior;
     }
 
-    public float getBaseMenor() {
-        return baseMenor;
-    }
-
-    public void setBaseMenor(float baseMenor) {
+    public void setBaseMenor(double baseMenor) {
         this.baseMenor = baseMenor;
     }
 
-    public float getAltura() {
-        return altura;
-    }
-
-    public void setAltura(float altura) {
+    public void setAltura(double altura) {
         this.altura = altura;
     }
 
-    public float getLado1() {
-        return lado1;
-    }
-
-    public void setLado1(float lado1) {
+    public void setLado1(double lado1) {
         this.lado1 = lado1;
     }
 
-    public float getLado2() {
-        return lado2;
+    public void setLado2(double lado2) {
+        this.lado2 = lado2;
     }
 
-    public void setLado2(float lado2) {
-        this.lado2 = lado2;
+    @Override
+    public double calcularPerimetro() {
+        return baseMaior + baseMenor + lado1 + lado2;
+    }
+
+    @Override
+    public double calcularArea() {
+        return (baseMaior + baseMenor) * altura / 2;
     }
 }
