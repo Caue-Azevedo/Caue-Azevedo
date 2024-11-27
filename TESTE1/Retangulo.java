@@ -1,31 +1,24 @@
 package com.senai.FormaGeometrica;
 
-public class Retangulo {
+public class Retangulo extends FormaGeometrica {
+    private double base;
+    private double altura;
 
-    float base;
-    float altura;
-    float perimetro;
-    float area;
-
-    public void calculoPerimetro(float base, float altura) {
-        perimetro = (base + altura) * 2;
-    }
-
-    public void calculoArea(float base, float altura) {
-        area = base * altura;
-    }
-
-    public float getBase() {
-        return base;
-    }
-    public void setBase(float base) {
+    public void setBase(double base) {
         this.base = base;
     }
 
-    public float getAltura() {
-        return altura;
-    }
-    public void setAltura(float altura) {
+    public void setAltura(double altura) {
         this.altura = altura;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return 2 * (base + altura);
+    }
+
+    @Override
+    public double calcularArea() {
+        return base * altura;
     }
 }
