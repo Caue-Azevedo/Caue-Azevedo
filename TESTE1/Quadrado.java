@@ -1,23 +1,19 @@
 package com.senai.FormaGeometrica;
 
-public class Quadrado {
-    float lado;
-    float perimetro;
-    float area;
+public class Quadrado extends FormaGeometrica {
+    private double lado;
 
-    public void calculoPerimetro(float lado) {
-        perimetro = lado * 4;
-    }
-
-    public void calculoArea(float lado) {
-        area = lado * lado;
-    }
-
-    public float getLado() {
-        return lado;
-    }
-
-    public void setLado(float lado) {
+    public void setLado(double lado) {
         this.lado = lado;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return 4 * lado;
+    }
+
+    @Override
+    public double calcularArea() {
+        return lado * lado;
     }
 }
