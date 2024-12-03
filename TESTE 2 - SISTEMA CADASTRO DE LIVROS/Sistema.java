@@ -86,6 +86,7 @@ public class Sistema {
         }
         System.out.print("| ");
         int codigoGenero = scan.nextInt();
+
         scan.nextLine();
         Genero generoSelecionado = null;
         for (Genero genero : generos) {
@@ -100,12 +101,14 @@ public class Sistema {
             livros.add(livro);
             System.out.println("| Livro cadastrado com sucesso!              |");
             System.out.println("|--------------------------------------------|");
-
         } else {
             System.out.println("|Gênero inválido.                            |");
         }
     }
-
+    
+    
+    // = ----------------------------------------------------------------------------- = //
+    // = ------------------------ Função para listar os livros ----------------------- = //
     private static void listarLivros(List<Livro> livros) {
         if (livros.isEmpty()) {
             System.out.println("Não há livros cadastrados.");
@@ -116,6 +119,8 @@ public class Sistema {
         }
     }
 
+    // = ----------------------------------------------------------------------------- = //
+    // = ------------------ Função para listar os livros por gênero ------------------ = //
     private static void listarLivrosPorGenero(Scanner scan, List<Livro> livros, List<Genero> generos) {
         System.out.println("Escolha um gênero:");
         for (Genero genero : generos) {
@@ -146,7 +151,10 @@ public class Sistema {
             System.out.println("Gênero inválido.");
         }
     }
-
+    
+    
+    // = ----------------------------------------------------------------------------- = //
+    // = ------------------------ Função para buscar os livros ----------------------- = //
     private static void buscarLivro(Scanner scan, List<Livro> livros) {
         System.out.print("Digite o título ou autor do livro: ");
         String busca = scan.nextLine().toLowerCase();
