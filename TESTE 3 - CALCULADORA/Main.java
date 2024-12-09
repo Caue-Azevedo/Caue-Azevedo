@@ -51,70 +51,10 @@ public class Main {
                         String numeroAtual = display.getText();
                         if (numeroAtual.length() > 0) {
                             display.setText(numeroAtual.substring(0, numeroAtual.length() - 1));
-                        } else if ("+".contains(textoBotao)) {
-                            String numeroAtual1 = display.getText();
-                            String numeroAtual2 = display.getText();
-
-                            // Convert Strings to floats
-                            float num1 = Float.parseFloat(numeroAtual1);
-                            float num2 = Float.parseFloat(numeroAtual2);
-
-                            // Perform the sum operation
-                            float soma = num1 + num2;
-
-                            // Update the display with the result
-                            display.setText(String.valueOf(soma));
-                        } else if ("-".contains(textoBotao)) {
-                            String numeroAtual1 = display.getText();
-                            String numeroAtual2 = display.getText();
-
-                            // Convert Strings to floats
-                            float num1 = Float.parseFloat(numeroAtual1);
-                            float num2 = Float.parseFloat(numeroAtual2);
-
-                            // Perform the sum operation
-                            float subtracao = num1 - num2;
-
-                            // Update the display with the result
-                            display.setText(String.valueOf(subtracao));
-                        } else if ("*".contains(textoBotao)) {
-                            String numeroAtual1 = display.getText();
-                            String numeroAtual2 = display.getText();
-
-                            // Convert Strings to floats
-                            float num1 = Float.parseFloat(numeroAtual1);
-                            float num2 = Float.parseFloat(numeroAtual2);
-
-                            // Perform the sum operation
-                            float multiplicacao = num1 * num2;
-
-                            // Update the display with the result
-                            display.setText(String.valueOf(multiplicacao));
-                        } else if ("/".contains(textoBotao)) {
-                            String numeroAtual1 = display.getText();
-                            String numeroAtual2 = display.getText();
-
-                            // Convert Strings to floats
-                            float num1 = Float.parseFloat(numeroAtual1);
-                            float num2 = Float.parseFloat(numeroAtual2);
-
-                            // Perform the sum operation
-                            float divisao = num1 / num2;
-
-                            // Update the display with the result
-                            display.setText(String.valueOf(divisao));
-                        } else if ("x²".contains(textoBotao)) {
-                            String numeroAtual1 = display.getText();
-
-                            // Convert Strings to floats
-                            float num1 = Float.parseFloat(numeroAtual1);
-
-                            // Perform the sum operation
-                            float quadrado = num1 * num1;
-
-                            // Update the display with the result
-                            display.setText(String.valueOf(quadrado));
                         }
+                    } else if ("+".equals(textoBotao) || "-".equals(textoBotao) || "*".equals(textoBotao) || "/".equals(textoBotao)) {
+                        primeiroNumero[0] = Double.parseDouble(display.getText());
+                        operacao[0] = textoBotao
                     }
                 }
             });
