@@ -30,6 +30,9 @@ public class Main {
                 "+/-", "0", ",", "="
         };
 
+        String[] operacao = {null};
+        double[] primeiroNumero = {0};
+
         for (int i = 0; i < 24; i++) {
             JButton botao = new JButton(botoes[i]);
             int x = 50 + (i % 4) * 80;
@@ -54,7 +57,37 @@ public class Main {
                         }
                     } else if ("+".equals(textoBotao) || "-".equals(textoBotao) || "*".equals(textoBotao) || "/".equals(textoBotao)) {
                         primeiroNumero[0] = Double.parseDouble(display.getText());
-                        operacao[0] = textoBotao
+                        operacao[0] = textoBotao;
+                        display.setText("");
+                    } else if ("=".equals(textoBotao)) {
+                        if (operacao[0] != null) {
+                            double segundoNumero = Double.parseDouble(display.getText());
+                            double resultado = 0;
+
+                            switch (operacao[0]) {
+                                case "+":
+                                    resultado = primeiroNumero[0] + segundoNumero;
+                                    break;
+                                case "-":
+                                    resultado = primeiroNumero[0] - segundoNumero;
+                                    break;
+                                case "*":
+                                    resultado = primeiroNumero[0] * segundoNumero;
+                                    break;
+                                case "÷":
+                                    if (segundoNumero != 0) {
+                                        resultado = primeiroNumero[0] / segundoNumero;
+                                    } else {
+                                        display.setText("Erro");
+                                        return;
+                                    }
+                                    break;
+                            }
+
+                            display.setText(String.valueOf(resultado));
+                            operacao[0] = null;
+                            primeiroNumero[0] = 0;
+                        }
                     }
                 }
             });
